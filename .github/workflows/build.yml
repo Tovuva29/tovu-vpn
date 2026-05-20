@@ -177,7 +177,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
-          java-version: 17
+          java-version: 17      - name: Setup Android keystore       if: startsWith(matrix.platform,'android')       run: |         echo "${{ secrets.KEY_JKS }}" | base64 -d > android/key.jks         echo "storePassword=${{ secrets.KEY_PASSWORD }}" > key.properties         echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> key.properties         echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> key.properties         echo "storeFile=key.jks" >> key.properties
       # - name: Setup NDK
       #   if: startsWith(matrix.platform,'android')
       #   uses: nttld/setup-ndk@v1
